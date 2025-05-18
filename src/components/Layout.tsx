@@ -13,9 +13,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const isCustomerDashboard = location.pathname === "/customer/dashboard";
   
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      <Navbar />
-      <main className="flex-grow">{children}</main>
+    <div className="flex flex-col min-h-screen bg-white max-w-md mx-auto shadow-lg overflow-hidden">
+      <div className="sticky top-0 z-50">
+        <Navbar />
+      </div>
+      <main className="flex-grow overflow-y-auto pb-safe">{children}</main>
       
       {/* Show footer only on certain pages */}
       {!isCustomerDashboard && <Footer />}
